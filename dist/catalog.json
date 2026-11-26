@@ -1,0 +1,405 @@
+{
+ "version": 2,
+ "models": [
+  {
+   "name": "M6S CCS-696",
+   "id": "m696",
+   "reach": "696 mm",
+   "payload": "6 kg",
+   "weight": "12.45 kg"
+  },
+  {
+   "name": "M6S CCS-809",
+   "id": "m809",
+   "reach": "809 mm",
+   "payload": "5 kg",
+   "weight": "12.70 kg"
+  },
+  {
+   "name": "M3S Long CCS-920",
+   "id": "m920",
+   "reach": "920 mm",
+   "payload": "3 kg",
+   "weight": "13.10 kg"
+  },
+  {
+   "name": "M6S Lite CCS-615",
+   "id": "l615",
+   "reach": "615 mm",
+   "payload": "5 kg",
+   "weight": "8.45 kg"
+  },
+  {
+   "name": "M6S Lite CCS-680",
+   "id": "l680",
+   "reach": "680 mm",
+   "payload": "4 kg",
+   "weight": "8.65 kg"
+  },
+  {
+   "name": "M6S Lite CCS-750",
+   "id": "l750",
+   "reach": "750 mm",
+   "payload": "3 kg",
+   "weight": "8.80 kg"
+  }
+ ],
+ "colors": [
+  {
+   "name": "天机白",
+   "hex": "#eeede9",
+   "metal": 0.0,
+   "rough": 0.3,
+   "swatch": "#f4f3ef"
+  },
+  {
+   "name": "安川黑",
+   "hex": "#2c2d2f",
+   "metal": 0.0,
+   "rough": 0.3,
+   "swatch": "#2c2d2f"
+  },
+  {
+   "name": "银灰",
+   "hex": "#aeb2b6",
+   "metal": 0.35,
+   "rough": 0.34,
+   "swatch": "#b3b7bb"
+  },
+  {
+   "name": "燕麦色",
+   "hex": "#dacfbb",
+   "metal": 0.0,
+   "rough": 0.32,
+   "swatch": "#dacfbb"
+  }
+ ],
+ "dims": [
+  {
+   "key": "model",
+   "label": "机械臂型号（双臂同型号）",
+   "values": [
+    "M6S CCS-696",
+    "M6S CCS-809",
+    "M3S Long CCS-920",
+    "M6S Lite CCS-615",
+    "M6S Lite CCS-680",
+    "M6S Lite CCS-750"
+   ]
+  },
+  {
+   "key": "color",
+   "label": "壳体颜色",
+   "values": [
+    "天机白",
+    "安川黑",
+    "银灰",
+    "燕麦色"
+   ]
+  },
+  {
+   "key": "gmsl",
+   "label": "GMSL2 相机线",
+   "values": [
+    "不需要",
+    "GMSL2 外走线",
+    "GMSL2 内走线"
+   ]
+  },
+  {
+   "key": "camera",
+   "label": "腕部相机套件（双臂）",
+   "values": [
+    "不选配",
+    "SHW5G",
+    "D405GA"
+   ]
+  },
+  {
+   "key": "sensor",
+   "label": "末端六维力传感器",
+   "values": [
+    "不选配",
+    "仅左臂",
+    "仅右臂",
+    "左右双臂"
+   ]
+  },
+  {
+   "key": "sensorModel",
+   "label": "力传感器型号",
+   "values": [
+    "LinkTouch LB63-200-15",
+    "Kunwei KWR75B"
+   ]
+  },
+  {
+   "key": "gripper",
+   "label": "KernelMind Omni-Gripper 夹爪（双臂）",
+   "values": [
+    "不选配",
+    "左右双臂各 1 个"
+   ]
+  },
+  {
+   "key": "controller",
+   "label": "控制器模块",
+   "values": [
+    "不选配",
+    "选配 1 套"
+   ]
+  },
+  {
+   "key": "power",
+   "label": "电源模块",
+   "values": [
+    "不选配",
+    "选配 1 套"
+   ]
+  },
+  {
+   "key": "frame",
+   "label": "机器人支撑架",
+   "values": [
+    "不选配",
+    "选配 1 套"
+   ]
+  },
+  {
+   "key": "base",
+   "label": "机器人底座",
+   "values": [
+    "不选配",
+    "选配 1 件"
+   ]
+  }
+ ],
+ "notes": {
+  "controller": "官方推荐的控制方案：x86 控制器盒出厂预装 Gento 控制 SDK 固件，可直接控制机械臂；随附以太网线，用于机械臂、x86 控制器与用户电脑之间的通讯。套件含电源适配器、急停按钮盒、延长管线包及 2 根末端 8Pin 插头线。将鼠标移到 3D 视图中的配件上可查看说明。",
+  "power": "Mean Well RSP-2000 开关电源（2000 W，AC 220 V → DC 48 V），含 3 m 电源线及 DC 48 V 转接线。",
+  "frame": "双臂固定支撑架（铝合金），含安装螺钉。",
+  "base": "带立柱的移动底座，地面至手臂安装中心 1200 mm，含万向脚轮与调平脚。",
+  "camera": "左右手腕各 1 套，含相机及安装支架。可选森云智能 SHW5G 广角相机（GMSL2 接口，需搭配 GMSL2 相机线），或英特尔 RealSense D405GA 近距离深度相机（不使用 GMSL2 相机线）。",
+  "sensor": "安装在末端法兰与工具之间，可按左臂、右臂或双臂选配。",
+  "gripper": "KernelMind Omni-Gripper 平行夹爪，双臂系统需左右臂各配 1 个。行程 90 mm，夹持力 30 N，自重 550 g。 夹爪通过末端法兰的 8Pin 接口连接，随附 8Pin 连接线（法兰 8Pin 接口 → 夹爪侧面接口）。"
+ },
+ "sensors": {
+  "cols": [
+   "LinkTouch LB63-200-15",
+   "Kunwei KWR75B"
+  ],
+  "rows": [
+   [
+    "额定力（每轴）",
+    "200 N",
+    "200 N"
+   ],
+   [
+    "额定力矩（每轴）",
+    "15 N·m",
+    "8 N·m"
+   ],
+   [
+    "精度",
+    "0.1% FS",
+    "0.5% FS"
+   ],
+   [
+    "重复性",
+    "0.1% FS",
+    "0.1% FS"
+   ],
+   [
+    "力分辨率",
+    "0.10 N",
+    "0.06 N*"
+   ],
+   [
+    "力矩分辨率",
+    "0.005 N·m",
+    "0.0024 N·m*"
+   ],
+   [
+    "直径 × 高度",
+    "63 × 33 mm",
+    "75 × 31.5 mm"
+   ],
+   [
+    "重量",
+    "212 g",
+    "280 g"
+   ]
+  ],
+  "foot": "* 坤维标称分辨率为 0.03% FS，按 KWR75B 的 200 N / 8 N·m 量程换算。",
+  "docs": [
+   [
+    "出厂证书与图纸",
+    "https://drive.google.com/file/d/1ttm6GBFbjhghhIHA1uehEZ94i2jjBGIr/view"
+   ],
+   [
+    "KWR75 系列规格书（B 型）",
+    "https://drive.google.com/file/d/1syTr4ThmGgMrTf_uKxgo5HhKXpsZZack/view"
+   ]
+  ]
+ },
+ "hover": {
+  "ctrl": [
+   "x86 控制器盒",
+   "出厂预装 Gento 控制 SDK 固件的主控计算机，实时驱动双臂。以太网口分别连接机械臂与用户电脑；内含主板、泄放模块和制动电阻。"
+  ],
+  "kit_power-adapter": [
+   "电源适配器",
+   "为 x86 控制器盒供电，接控制器的 DC 12 V 电源口。"
+  ],
+  "kit_emergency-stop": [
+   "急停按钮盒",
+   "按下即刻停止机械臂运动，调试和日常操作时用于人员与设备安全保护。"
+  ],
+  "kit_communication-extension-leads": [
+   "通讯延长线",
+   "延长机械臂基座线束中的通讯线（EtherCAT 与调试 RS485），方便把控制器放在离手臂更远的位置。"
+  ],
+  "kit_red-black-extension-leads": [
+   "红黑电源延长线",
+   "延长机械臂的 DC 48 V 供电线（红正黑负）。"
+  ],
+  "kit_green-terminal-power-lead": [
+   "绿色端子电源线",
+   "带绿色插拔式接线端子的供电线，用于连接 DC 48 V 电源。"
+  ],
+  "kit_wrist-8pin-breakout-pair": [
+   "末端 8Pin 插头线 × 2",
+   "插入手腕 8Pin 插座，引出 DC 24 V / 3 A 电源、两路 RS485 和一路 CAN FD，用于连接夹爪、传感器等末端设备。"
+  ],
+  "psu": [
+   "RSP-2000 开关电源",
+   "Mean Well 2000 W 开关电源，AC 220 V 输入、DC 48 V 输出，为双臂供电。"
+  ]
+ },
+ "cameras": {
+  "SHW5G": {
+   "name": "森云智能 SHW5G 腕部相机",
+   "rows": [
+    [
+     "类型",
+     "5 MP 全局快门单目彩色相机"
+    ],
+    [
+     "分辨率 @ 帧率",
+     "2560 × 1984 @ 30 fps"
+    ],
+    [
+     "视场角",
+     "130°(H) × 102°(V)"
+    ],
+    [
+     "景深",
+     "0.3 m – ∞（F/2，焦距 2.18 mm）"
+    ],
+    [
+     "传输接口",
+     "GMSL2（FAKRA Z 型接头，9–16 V 供电）"
+    ],
+    [
+     "尺寸 / 重量",
+     "25 × 25 × 29.5 mm，< 50 g"
+    ]
+   ],
+   "note": "广角全局快门，适合遥操作与数据采集时观察抓取过程。",
+   "link": [
+    "SHW5G 规格书",
+    "https://nnz-ipc.ru/files/documentation/sensing/shw5g_camera_spec.pdf"
+   ]
+  },
+  "D405GA": {
+   "name": "英特尔 RealSense D405GA 腕部深度相机",
+   "rows": [
+    [
+     "类型",
+     "近距离双目深度相机（RGB + 深度）"
+    ],
+    [
+     "分辨率 @ 帧率",
+     "1280 × 720 @ 30 fps；848 × 480 @ 90 fps"
+    ],
+    [
+     "视场角",
+     "深度 84°(H) × 58°(V)；RGB 84°(H) × 58°(V)"
+    ],
+    [
+     "理想工作距离",
+     "7 – 50 cm"
+    ],
+    [
+     "传输接口",
+     "非 GMSL2（不使用 GMSL2 相机线，线缆方案以销售确认为准）"
+    ]
+   ],
+   "note": "近距离亚毫米级深度，适合抓取定位、对位装配与精细操作。",
+   "link": [
+    "D405 产品页",
+    "https://www.intelrealsense.com/depth-camera-d405/"
+   ]
+  }
+ },
+ "families": [
+  {
+   "id": "m6",
+   "name": "M6 系列",
+   "tag": "官方推荐",
+   "models": [
+    "M6S CCS-696",
+    "M6S CCS-809",
+    "M3S Long CCS-920"
+   ],
+   "points": [
+    "重复定位精度更高",
+    "全部 7 个关节带机械抱闸",
+    "工作半径更长（696–920 mm）",
+    "额定负载更高（最高 6 kg）"
+   ],
+   "use": "适合科研、数据采集与通用操作"
+  },
+  {
+   "id": "lite",
+   "name": "M6 Lite 系列",
+   "tag": "",
+   "models": [
+    "M6S Lite CCS-615",
+    "M6S Lite CCS-680",
+    "M6S Lite CCS-750"
+   ],
+   "points": [
+    "轻量化，单臂约 8.5 kg",
+    "多用于人形机器人",
+    "J5、J6、J7 关节无抱闸"
+   ],
+   "use": "适合人形机器人与对重量敏感的集成"
+  }
+ ],
+ "gmslDecoder": "Marvin 双臂不同于 Marvin Pro：Pro 自带 Orin 主机与相机解串板，Marvin 双臂不含。选择 SHW5G（GMSL2 接口）时，需要自备 GMSL2 解串板或其他方案来读取视频流。",
+ "missing": {
+  "controller": [
+   "未选配控制器模块",
+   "控制器套件包含急停按钮盒，缺少急停时机械臂运行存在安全风险，请务必自备合格的急停装置；同时将无法使用 Gento 预装的控制 SDK 固件控制机械臂，需要自行开发或集成控制方案。",
+   "缺少急停存在安全风险；无法使用 Gento 控制 SDK 固件"
+  ],
+  "power": [
+   "未选配电源模块",
+   "需要自行准备规格匹配的 DC 48 V 电源（官方方案为 2000 W）。强烈建议使用官方电源：官方电源已与机械臂完成测试，第三方电源有烧毁机械臂的风险，由此造成的损坏可能不在产品保修范围内。",
+   "需自备规格匹配的 DC 48 V 电源；第三方电源导致的损坏可能不在保修范围内"
+  ],
+  "frame": [
+   "未选配机器人支撑架",
+   "建议使用官方支撑架：它配有标准的零位标定流程，设计上保证双臂严格平行对齐，并与官方 URDF 完全对应。使用自备安装架时，我们可能无法协助手眼标定，也无法提供对应的 URDF 文件。",
+   "自备安装架时可能无法协助手眼标定，也无法提供对应 URDF"
+  ]
+ },
+ "d405Gmsl": "你在「外观与走线」中选择了 GMSL2 相机线，但 D405GA 不使用 GMSL2 相机线（通常使用其他类型的线缆），3D 预览中不显示该线缆。请与销售确认 D405GA 的线缆方案，或将相机线改为「不需要」。",
+ "pinOrient": "末端法兰支持调整安装方向，可使左右双臂的 8Pin 接口均朝上（如有需要请在「其他需求」中注明）；默认按当前方向出厂。",
+ "baseShip": [
+  "海外交付提示",
+  "带立柱的移动底座体积大、重量重。如交付地址在中国大陆以外，国际运费可能会大幅增加。",
+  "建议考虑 Marvin Pro：其价格已包含移动底座，并将控制器模块、电源与 AI 计算单元集成在一个机箱内，海外交付更省心。"
+ ]
+}

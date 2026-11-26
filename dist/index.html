@@ -1,0 +1,67 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Marvin 配置工作室 · Gento Robotics</title><link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+/* Gento brand: green #00C896 · ink #0B0A0A · muted #5E6461 · surface #F7F7F7 · D-DIN Exp (matches docs.gentorobotics.ai) */
+@font-face{font-family:'D-DINExp';src:local('D-DINExp'),local('D-DIN Exp'),local('D-DINExp-Regular');font-weight:400;font-display:swap}
+@font-face{font-family:'D-DINExp';src:local('D-DINExp-Bold'),local('D-DIN Exp Bold');font-weight:700;font-display:swap}
+:root{--green:#00C896;--green-d:#007F5F;--tint:rgba(0,200,150,.1);--tint2:rgba(0,200,150,.2);--ink:#0B0A0A;--ink2:#2B302E;--muted:#5E6461;--surface:#F7F7F7;--line:rgba(0,0,0,.1);--line2:rgba(0,0,0,.16);--pill:30px;
+ --font:'D-DINExp','D-DIN Exp','D-DIN','Bahnschrift','DIN Alternate','DIN Next',Arial,'PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}body{margin:0;color:var(--ink);background:#fff;font:400 16px/1.6 var(--font);-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 1}
+header{height:64px;padding:0 clamp(20px,3vw,40px);display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:6}
+.brand{display:flex;align-items:center;gap:14px;color:var(--ink);text-decoration:none}.brand img{height:22px;width:auto;display:block}.brand span{font-size:15px;color:var(--muted);letter-spacing:.02em;padding-left:14px;border-left:1px solid var(--line);line-height:22px}
+.lang{display:inline-flex;align-items:center;height:36px;padding:3px;border:1px solid var(--line);border-radius:var(--pill);gap:2px}.lang button{height:28px;min-width:44px;padding:0 12px;border:0;border-radius:var(--pill);background:transparent;font-size:14px;color:var(--muted)}.lang button[aria-pressed=true]{background:var(--ink);color:#fff}.lang button:hover:not([aria-pressed=true]){background:var(--tint);color:var(--ink)}
+small{font-size:14px;color:var(--muted)}
+main{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,1fr)}.panel>*{max-width:860px}
+.stage{position:sticky;top:64px;align-self:start;padding:30px clamp(20px,3.5vw,56px) 26px;background:radial-gradient(ellipse at 50% 42%,#d3d8d6 0%,#adb4b1 55%,#868e8a 100%);height:calc(100vh - 64px);min-height:560px;display:flex;flex-direction:column}
+.eyebrow{font-size:13px;letter-spacing:.14em;color:#2B302E;font-weight:600}.stage h1{font-size:clamp(44px,5vw,76px);line-height:1;letter-spacing:-.02em;font-weight:600;margin:6px 0 4px}.stage p{margin:0;color:#1d2321}
+.view{position:relative;flex:1;min-height:300px;margin:10px 0 10px}.view canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:grab;outline:none}.view canvas:active{cursor:grabbing}.view img.fallback{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 17px 10px #20382c22)}
+.chips{position:absolute;left:0;top:0;display:flex;flex-wrap:wrap;gap:6px;z-index:2;max-width:100%}.chips button{height:30px;font-size:13px;padding:0 12px;border-radius:var(--pill);background:rgba(255,255,255,.82);border:1px solid rgba(0,0,0,.08);color:var(--ink2);backdrop-filter:blur(6px)}.chips button:hover{background:#fff}.chips button.on{background:var(--ink);border-color:var(--ink);color:#fff}.chips button[disabled]{opacity:.45;cursor:default}
+.legend{position:absolute;right:0;bottom:0;display:flex;align-items:center;gap:6px;font-size:12px;color:var(--ink2);z-index:2}.legend label{display:flex;gap:6px;align-items:center;background:rgba(255,255,255,.8);padding:4px 10px;border-radius:var(--pill)}.legend input{accent-color:var(--green-d)}
+.loading{position:absolute;inset:0;display:grid;place-items:center;color:var(--ink2);font-size:14px}
+.hint{font-size:12px;color:#2B302E;margin:0 0 12px}
+.spec{display:flex;gap:8%;border-top:1px solid rgba(0,0,0,.22);padding-top:14px}.spec strong{display:block;font-size:24px;font-weight:600;letter-spacing:-.01em}.spec small{color:#2B302E}
+.panel{padding:36px clamp(20px,3.5vw,60px) 56px;background:#fff}
+h2{font-size:30px;line-height:1.2;letter-spacing:-.01em;font-weight:600;margin:0 0 14px}h3{font-size:17px;font-weight:600;margin:26px 0 10px}
+.steps{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:30px;padding:4px;background:var(--surface);border-radius:var(--pill);width:max-content;max-width:100%}.steps button{height:34px;border:0;border-radius:var(--pill);padding:0 14px 0 6px;color:var(--muted);background:transparent;font-size:14px;display:inline-flex;align-items:center;gap:8px}.steps button i{font-style:normal;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:12px;background:#fff;color:var(--muted);border:1px solid var(--line)}.steps button:hover:not(.on):not([disabled]){color:var(--ink)}.steps .on{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.08)}.steps .on i{background:var(--green);border-color:var(--green);color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.g3{grid-template-columns:repeat(3,1fr)}
+.choice,button,select,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer;border:1px solid var(--line2);background:#fff;border-radius:var(--pill);padding:0 18px;height:40px}
+input,select,textarea{border:1px solid var(--line2);background:#fff;border-radius:10px;padding:10px 13px}
+.choice{text-align:left;display:block;height:auto;border-radius:14px;padding:13px 15px;border:1px solid var(--line2);transition:border-color .15s,background .15s}.choice:hover{border-color:rgba(0,0,0,.32)}.choice b{display:block;font-size:17px;font-weight:600}.choice small{display:block}.choice[aria-pressed=true]{border-color:var(--green);box-shadow:inset 0 0 0 1px var(--green);background:rgba(0,200,150,.05)}
+.swatch{display:inline-block;width:18px;height:18px;border-radius:50%;border:1px solid rgba(0,0,0,.2);vertical-align:-3px;margin-right:8px;font-style:normal}
+.next{background:var(--green);border-color:var(--green);color:var(--ink);font-weight:600;padding:0 24px;height:44px}.next:hover{background:#00b487;border-color:#00b487}.actions{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap}.actions>button:not(.next){height:44px;padding:0 22px}.actions>button:not(.next):hover{background:var(--tint);border-color:transparent}
+.field{display:block;margin:12px 0;font-size:14px;color:var(--ink2)}.field select,.field input,.field textarea{display:block;width:100%;margin-top:5px;font-size:16px}.field input:focus,.field textarea:focus{border-color:var(--green-d);outline:none;box-shadow:0 0 0 3px var(--tint)}
+details summary{cursor:pointer;font-weight:600;margin:20px 0 4px}
+.pair{display:flex;gap:10px;align-items:center;margin-top:12px}
+.line{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);padding:9px 0;white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px}.line span{color:var(--muted);flex:0 0 auto;max-width:45%}.line b{text-align:right;font-weight:500}
+.quiet{color:var(--muted)}
+.acc{display:grid;grid-template-columns:132px 1fr;gap:16px;border:1px solid var(--line);border-radius:16px;padding:14px;margin:0 0 12px;transition:border-color .2s,background .2s}.acc.sel{border-color:var(--green);background:rgba(0,200,150,.035)}.acc .pic{width:132px;height:104px;border-radius:10px;background:var(--surface);display:grid;place-items:center;overflow:hidden;position:relative}.acc .pic img{width:100%;height:100%;object-fit:contain}.acc .pic em{position:absolute;left:5px;bottom:4px;font-size:11px;font-style:normal;color:var(--muted);background:rgba(255,255,255,.85);padding:0 6px;border-radius:6px}
+.acc h4{margin:0;font-size:17px;font-weight:600;display:flex;justify-content:space-between;gap:8px;align-items:baseline}.acc h4 button{height:28px;font-size:13px;padding:0 12px;color:var(--ink);border-color:var(--line2);white-space:nowrap}.acc h4 button:hover{background:var(--tint);border-color:transparent}.acc p{margin:3px 0 10px;font-size:14px;color:var(--muted);line-height:1.55}
+.seg{display:flex;flex-wrap:wrap;gap:6px}.seg button{height:34px;padding:0 14px;font-size:14px}.seg button:hover:not([aria-pressed=true]){background:var(--tint);border-color:transparent}.seg button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+.shot{width:100%;border:1px solid var(--line);border-radius:14px;background:#fff;display:block;margin:4px 0 8px}
+button:focus-visible,input:focus-visible,select:focus-visible,.choice:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+footer{padding:22px clamp(20px,3vw,40px);display:flex;align-items:center;gap:14px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}footer img{height:16px;opacity:.9}
+.q{width:22px;height:22px;padding:0;border-radius:50%;font-size:13px;font-weight:600;line-height:20px;margin-left:8px;color:var(--green-d);border-color:rgba(0,127,95,.4);vertical-align:middle}.q:hover{background:var(--tint)}
+.tip{font-weight:400;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:14px;line-height:1.65;margin:0 0 12px;color:var(--ink2)}.tip b{display:block;margin-bottom:4px;font-weight:600}.tip br+b{display:inline}
+.warn{background:#FFF7E6;border:1px solid #F4DDA8;padding:10px 13px;border-radius:10px;font-size:14px;color:#5a4300}.warn b{font-weight:600}
+.warn.strong{background:#fff0e0;border:1.5px solid #e8892b;color:#6e3a05;align-items:flex-start}.warn.strong b{color:#b8560a}.warn.strong input{accent-color:#d9731c;margin-top:5px}
+.note8{background:var(--tint);border-left:3px solid var(--green);padding:9px 13px;border-radius:8px;font-size:14px;margin:10px 0 0;color:var(--ink2)}
+.misslist{margin:6px 0 10px;padding-left:20px}.misslist li{margin:4px 0}.warn button{height:34px;font-size:14px;margin-top:2px}
+.block{color:#b8560a;font-size:14px;margin:8px 0 0}.next[disabled]{opacity:.4;cursor:not-allowed}.steps button[disabled]{opacity:.4;cursor:not-allowed}
+.sub{margin-top:14px;border-top:1px dashed var(--line2);padding-top:12px}.sub>b{display:block;font-size:14px;font-weight:600;margin-bottom:8px}
+.cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:13px;margin-top:10px;border:1px solid var(--line);border-radius:10px;overflow:hidden}.cmp th,.cmp td{border-bottom:1px solid var(--line);padding:7px 9px;text-align:left}.cmp tr:last-child td{border-bottom:0}.cmp thead th{font-weight:600;color:var(--ink2);background:var(--surface)}.cmp .on{background:var(--tint);color:var(--ink);font-weight:600}
+.fine{font-size:12px;color:var(--muted);margin:8px 0 0}.fine a{color:var(--green-d);text-decoration:underline;text-decoration-color:rgba(0,200,150,.5);text-underline-offset:3px}
+.v3d-tip{position:absolute;z-index:5;max-width:270px;background:rgba(11,10,10,.92);color:#eef2f0;border-radius:12px;padding:10px 13px;font-size:13px;line-height:1.55;pointer-events:none;box-shadow:0 8px 24px rgba(0,0,0,.25)}.v3d-tip b{display:block;font-size:14px;margin-bottom:3px;color:#fff;font-weight:600}
+.fam ul{margin:8px 0 8px;padding-left:18px;font-size:14px;color:var(--ink2);line-height:1.6}.fam small{color:var(--muted)}
+.rec{font-size:12px;font-weight:600;color:var(--green-d);background:var(--tint);border-radius:var(--pill);padding:2px 9px;margin-left:6px;vertical-align:2px;letter-spacing:.02em}
+.spec1 td:first-child{color:var(--muted);white-space:nowrap;width:34%}
+[hidden]{display:none!important}
+@media(max-width:800px){main{display:block}.stage{position:static;height:auto;min-height:0;padding:18px 5vw}.view{flex:none;height:min(78vw,380px)}.stage h1{font-size:44px}.spec{padding-top:8px}.spec strong{font-size:18px}.panel{padding:24px 5vw}.steps{margin-bottom:18px;width:100%}.steps button{padding:0 10px 0 4px;font-size:13px}.acc{grid-template-columns:96px 1fr}.acc .pic{width:96px;height:84px}.chips button{font-size:12px;height:26px;padding:0 9px}.g3{grid-template-columns:1fr}.brand span{display:none}}
+@media(max-width:520px){.acc{grid-template-columns:1fr}.acc .pic{width:100%;height:150px}.cmp{font-size:12px}}
+</style>
+<header><a class="brand" href="https://gentorobotics.ai" target="_blank" rel="noopener"><img src="logo.svg" alt="Gento"><span data-i18n="Marvin 配置工作室">Marvin 配置工作室</span></a>
+<div class="lang" role="group" data-i18n-aria="语言" aria-label="语言"><button data-lang="zh" aria-pressed="true">中文</button><button data-lang="en" aria-pressed="false">EN</button></div></header>
+<main><section class="stage"><div class="eyebrow">MARVIN SERIES</div><h1>Marvin</h1><p data-i18n="双臂力控机械臂">双臂力控机械臂</p>
+<div class="view" id="view"><div class="chips" id="chips"></div><div class="loading" id="loading" data-i18n="正在加载 3D 模型…">正在加载 3D 模型…</div><canvas id="v3d" tabindex="0" data-i18n-aria="Marvin 3D 配置预览，可拖动旋转" aria-label="Marvin 3D 配置预览，可拖动旋转"></canvas></div>
+<p class="hint" id="hint" data-i18n="拖动旋转 · 滚轮或双指缩放 · 右键或 Shift 拖动平移 · 双击复位。颜色与材质为示意，以实物为准。">拖动旋转 · 滚轮或双指缩放 · 右键或 Shift 拖动平移 · 双击复位。颜色与材质为示意，以实物为准。</p>
+<div class="spec" id="spec"></div></section><section class="panel"><div class="steps" id="steps"></div><div id="body"></div></section></main>
+<footer><img src="logo.svg" alt="Gento"><span>Gento Robotics · <span data-i18n="Marvin 配置工作室">Marvin 配置工作室</span></span></footer><script type="module" src="app.js"></script></html>
